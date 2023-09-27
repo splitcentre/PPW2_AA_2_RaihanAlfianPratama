@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 //route resource
-Route::resource('/', \App\Http\Controllers\PostController::class);
+Route::post('/', [PostController::class,'index']);

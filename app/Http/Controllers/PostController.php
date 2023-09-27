@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-//return type View
 use Illuminate\View\View;
-
-//return type redirectResponse
 use Illuminate\Http\RedirectResponse;
-
-//import Facade "Storage"
 use Illuminate\Support\Facades\Storage;
+use App\Models\Post;
 
 class PostController extends Controller
 {    
@@ -75,7 +70,7 @@ class PostController extends Controller
      * @param  mixed $id
      * @return View
      */
-    public function show(string $id): View
+    public function show($id): View
     {
         //get post by ID
         $post = Post::findOrFail($id);
@@ -90,7 +85,7 @@ class PostController extends Controller
      * @param  mixed $id
      * @return void
      */
-    public function edit(string $id): View
+    public function edit($id): View
     {
         //get post by ID
         $post = Post::findOrFail($id);
